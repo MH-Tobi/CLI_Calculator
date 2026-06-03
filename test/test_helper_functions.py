@@ -1,4 +1,4 @@
-from src.calculator import calculator
+from calculator import calculator
 
 
 def _calculate_test_helper(runner, operation, expected_result):
