@@ -55,8 +55,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 In diesem Projekt habe ich versucht einen simplen CLI Calculator mit Python zu erstellen.
 Primäres Ziel war es mein Portfolio zu erweitern und meine Python-Skills zu verbessern.
 
@@ -204,7 +202,7 @@ Project Link: [https://github.com/MH-Tobi/CLI_Calculator](https://github.com/MH-
 [issues-shield]: https://img.shields.io/github/issues/MH-Tobi/CLI_Calculator.svg?style=for-the-badge
 [issues-url]: https://github.com/MH-Tobi/CLI_Calculator/issues
 [license-shield]: https://img.shields.io/github/license/MH-Tobi/CLI_Calculator.svg?style=for-the-badge
-[license-url]: https://github.com/MH-Tobi/CLI_Calculator/blob/master/LICENSE.txt
+[license-url]: https://github.com/MH-Tobi/CLI_Calculator/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/tobias-pflug
 [product-screenshot]: images/screenshot.png
