@@ -1,5 +1,9 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "calulator"
+name = "calculator"
 version = "0.0.1"
 description = "Hello CLI"
 requires-python = ">=3.14"
@@ -8,8 +12,4 @@ dependencies = [
 ]
 
 [project.scripts]
-hello = "calulator.calulator:cli"
-
-[build-system]
-requires = ["flit_core<4"]
-build-backend = "flit_core.buildapi"
+calculator = "calculator.calculator:cli"
