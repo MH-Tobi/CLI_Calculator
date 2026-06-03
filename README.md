@@ -64,13 +64,6 @@ Um eine komfortable CLI-Funktionalität zu gewährleisten, wurde die Python-Bibl
 CLICK ermöglicht die Erstellung von komponierbaren und intuitiven Befehlszeilenschnittstellen mit minimalem Code.
 Vorteil dieser Bibliothek ist unter anderem die automatische Generierung von Hilfeseiten (--help).
 
-
-
-
-
-
-Here's a blank template to get started. To avoid retyping too much info, do a search and replace with your text editor for the following: `MH-Tobi`, `CLI_Calculator`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`, `project_license`
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -213,7 +206,7 @@ Project Link: [https://github.com/MH-Tobi/CLI_Calculator](https://github.com/MH-
 [license-shield]: https://img.shields.io/github/license/MH-Tobi/CLI_Calculator.svg?style=for-the-badge
 [license-url]: https://github.com/MH-Tobi/CLI_Calculator/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://linkedin.com/in/tobias-pflug
 [product-screenshot]: images/screenshot.png
 <!-- Shields.io badges. You can find a comprehensive list with many more badges at: https://github.com/inttter/md-badges -->
 [Python-url]: https://www.python.org/
