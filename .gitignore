@@ -1,3 +1,6 @@
 /calculator/calculator_history
 /calculator/calculator_variables
 /calculator.egg-info/
+.idea/
+.pytest_cache/
+.venv/
