@@ -13,3 +13,9 @@ dependencies = [
 
 [project.scripts]
 calculator = "calculator.calculator:cli"
+
+[tool.pytest]
+minversion = "9.0"
+addopts = ["-ra", "--import-mode=importlib",]
+pythonpath = ["test/helper_functions", "calculator"]
+testpaths = ["test"]
