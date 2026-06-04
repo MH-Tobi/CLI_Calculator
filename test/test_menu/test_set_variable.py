@@ -1,6 +1,6 @@
 from click.testing import CliRunner
-import test.test_helper_functions as helper_functions
-from calculator import calculator
+from test.helper_functions import test_helper_functions as helper_functions
+import calculator
 
 
 def test_with_allowed_variable_name_and_value_1():

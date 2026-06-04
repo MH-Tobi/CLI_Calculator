@@ -1,5 +1,5 @@
 from click.testing import CliRunner
-import test.test_helper_functions as helper_functions
+from test.helper_functions import test_helper_functions as helper_functions
 
 
 def test_with_empty_last_result_1():
