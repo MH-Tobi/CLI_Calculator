@@ -299,12 +299,19 @@ def _analyse_string(string, level):
             if len(string) > 0:
                 ## as long there are characters after the matched number,
                 ## the next character is checked if it is an operator or a closing parenthesis
-                if string[0] in ["+", "-", "*", "/"]:
-                    # In case of an operator it is added to the operators-list
-                    operators.append(string[0])
+                if string[0] in ["+", "-", "*", "/", "^"]:
+                    if string[0:2] == "**":
+                        # In case of the "**"-operator the "^"-operator is added to the operators-list
+                        operators.append("^")
 
-                    # and the operator is removed from the string
-                    string = string[1:]
+                        # and the "**"-operator is removed from the string
+                        string = string[2:]
+                    else:
+                        # In case of an operator it is added to the operators-list
+                        operators.append(string[0])
+
+                        # and the operator is removed from the string
+                        string = string[1:]
                 elif string[0] == ")":
                     # In case of a closing parenthesis it is checked if we are in a greater level than 0
                     if level > 0:
@@ -336,9 +343,19 @@ def _analyse_string(string, level):
 
                 if len(string) > 0:
                     # If there are still characters, it is possible that there is an operator after the closing parenthesis
-                    if string[0] in ["+", "-", "*", "/"]:
-                        operators.append(string[0])
-                        string = string[1:]
+                    if string[0] in ["+", "-", "*", "/", "^"]:
+                        if string[0:2] == "**":
+                            # In case of the "**"-operator the "^"-operator is added to the operators-list
+                            operators.append("^")
+
+                            # and the "**"-operator is removed from the string
+                            string = string[2:]
+                        else:
+                            # In case of an operator it is added to the operators-list
+                            operators.append(string[0])
+
+                            # and the operator is removed from the string
+                            string = string[1:]
                 else:
                     # if there is no character after the closing parenthesis the analysis is done
                     string_analysed = True
@@ -373,6 +390,13 @@ def _solve_equation(numbers, operators):
             if not result:
                 return False, numbers
             operators.pop(operators_list_indices[i])
+
+    while "^" in operators:
+        operator_index_power = operators.index("^")
+
+        numbers[operator_index_power] = pow(numbers[operator_index_power], numbers[operator_index_power + 1])
+        operators.pop(operator_index_power)
+        numbers.pop(operator_index_power + 1)
 
     while "*" in operators or "/" in operators:
         try:
