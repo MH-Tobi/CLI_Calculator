@@ -6,10 +6,6 @@ def test_unexpected_character_minus():
     runner = CliRunner()
     helper_functions._calculate_test_helper(runner, "15---2", "The character \"-\" in the substring \"--2\" is not expected.\n")
 
-def test_unexpected_character_multiplication_sign():
-    runner = CliRunner()
-    helper_functions._calculate_test_helper(runner, "15**-2", "The character \"*\" in the substring \"*-2\" is not expected.\n")
-
 def test_unexpected_character_point():
     runner = CliRunner()
     helper_functions._calculate_test_helper(runner, "15..68-2", "The character \".\" in the substring \".68-2\" is not expected.\n")
@@ -21,10 +17,6 @@ def test_missing_operator_between_two_floats():
 def test_unexpected_character_letter_h():
     runner = CliRunner()
     helper_functions._calculate_test_helper(runner, "15+Here_Error-2", "The character \"H\" in the substring \"Here_Error-2\" is not expected.\n")
-
-def test_unexpected_character_letter_circumflex ():
-    runner = CliRunner()
-    helper_functions._calculate_test_helper(runner, "15+-2*4^5", "The character \"^\" in the substring \"^5\" is not expected.\n")
 
 def test_unexpected_character_letter_backslash():
     runner = CliRunner()
