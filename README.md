@@ -152,7 +152,7 @@ calculator calculate -- -3.74*0.344-22.00001+2.1/4.43
 #### Rules for calculation
 
 - Numbers must have the format `[+\-]?[0-9]+\.?[0-9]*` (For an explanation, see page [regex101](https://regex101.com/)).
-- There may be only one operator between two numbers. (Allowed operators are `+`, `-`, `*`, `/`)
+- There may be only one operator between two numbers. (Allowed operators are `+`, `-`, `*`, `/`, `^`, `**`)
 - Keywords must not be negated using a leading minus sign. (To negate them, use `*-1`)
 - Spaces can be used to separate numbers and operators. (like `-2 * -5 / 2 + 1`)
 - Parenthesis Pairs for Encapsulating Expressions. (like `(2+4)*(3+2)`)
@@ -167,7 +167,6 @@ calculator calculate -- -3.74*0.344-22.00001+2.1/4.43
 - not allowed:
   - `calculator calculate -- -2---2` => `---2` too many characters
   - `calculator calculate -- -res+2` => `-res` negated Keyword
-  - `calculator calculate -- res^4` => `^` currently unallowed operator
   - `calculator calculate -- 2,4 * 2` => The decimal separator is a `,` instead of a `.`.
   - `calculator calculate -- (2.4 * 2)(5/3)` => Missing Operator between the two parenthesis pairs
 
@@ -242,7 +241,7 @@ calculator menu --get-constants
 
 - [x] Detection of Parenthesis Pairs for Encapsulating Expressions
 - [ ] Extension of Operators
-  - [ ] Powers (^ or **)
+  - [x] Powers (^ or **)
   - [ ] Modulo (%)
 - [ ] Complete the help
 
