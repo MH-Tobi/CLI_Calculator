@@ -299,7 +299,7 @@ def _analyse_string(string, level):
             if len(string) > 0:
                 ## as long there are characters after the matched number,
                 ## the next character is checked if it is an operator or a closing parenthesis
-                if string[0] in ["+", "-", "*", "/", "^"]:
+                if string[0] in ["+", "-", "*", "/", "^", "%"]:
                     if string[0:2] == "**":
                         # In case of the "**"-operator the "^"-operator is added to the operators-list
                         operators.append("^")
@@ -343,7 +343,7 @@ def _analyse_string(string, level):
 
                 if len(string) > 0:
                     # If there are still characters, it is possible that there is an operator after the closing parenthesis
-                    if string[0] in ["+", "-", "*", "/", "^"]:
+                    if string[0] in ["+", "-", "*", "/", "^", "%"]:
                         if string[0:2] == "**":
                             # In case of the "**"-operator the "^"-operator is added to the operators-list
                             operators.append("^")
@@ -390,6 +390,18 @@ def _solve_equation(numbers, operators):
             if not result:
                 return False, numbers
             operators.pop(operators_list_indices[i])
+
+    while "%" in operators:
+        operator_index_modulo = operators.index("%")
+
+        try:
+            if numbers[operator_index_modulo + 1] == 0:
+                raise ZeroDivisionError
+            numbers[operator_index_modulo] = numbers[operator_index_modulo] % numbers[operator_index_modulo + 1]
+            operators.pop(operator_index_modulo)
+            numbers.pop(operator_index_modulo + 1)
+        except ZeroDivisionError:
+            return False, "Modulo by zero error."
 
     while "^" in operators:
         operator_index_power = operators.index("^")
