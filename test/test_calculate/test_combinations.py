@@ -18,3 +18,7 @@ def test_basic_arithmetic_with_integers_and_floats():
 def test_parenthesis_pairs_and_exponential():
     runner = CliRunner()
     helper_functions._calculate_test_helper(runner, "(2.43*3.6**(2-(4/2)))^(20*0.1)", '5.9049\n')
+
+def test_modulo_with_parenthesis_pairs():
+    runner = CliRunner()
+    helper_functions._calculate_test_helper(runner, "(2.43*3.6**(2-(4/2)))%(20*0.1)", '0.43\n')

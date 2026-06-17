@@ -77,3 +77,11 @@ def test_missing_operator_after_parenthesis_pairs():
 def test_missing_operator_between_two_parenthesis_pairs():
     runner = CliRunner()
     helper_functions._calculate_test_helper(runner, "15+((-2)*4)(45+5)", "An operator is missing in the expression \"15+((-2)*4)(45+5)\".\n")
+
+def test_modulo_by_zero_by_direct_zero():
+    runner = CliRunner()
+    helper_functions._calculate_test_helper(runner, "15+-2*4%0", "Modulo by zero error.\n")
+
+def test_modulo_by_zero_by_calculated_zero():
+    runner = CliRunner()
+    helper_functions._calculate_test_helper(runner, "15%(32-32)+-2", "Modulo by zero error.\n")
