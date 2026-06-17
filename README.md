@@ -152,7 +152,7 @@ calculator calculate -- -3.74*0.344-22.00001+2.1/4.43
 #### Rules for calculation
 
 - Numbers must have the format `[+\-]?[0-9]+\.?[0-9]*` (For an explanation, see page [regex101](https://regex101.com/)).
-- There may be only one operator between two numbers. (Allowed operators are `+`, `-`, `*`, `/`, `^`, `**`)
+- There may be only one operator between two numbers. (Allowed operators are `+`, `-`, `*`, `/`, `^`, `**`, `%`)
 - Keywords must not be negated using a leading minus sign. (To negate them, use `*-1`)
 - Spaces can be used to separate numbers and operators. (like `-2 * -5 / 2 + 1`)
 - Parenthesis Pairs for Encapsulating Expressions. (like `(2+4)*(3+2)`)
@@ -240,9 +240,9 @@ calculator menu --get-constants
 ## Roadmap
 
 - [x] Detection of Parenthesis Pairs for Encapsulating Expressions
-- [ ] Extension of Operators
+- [x] Extension of Operators
   - [x] Powers (^ or **)
-  - [ ] Modulo (%)
+  - [x] Modulo (%)
 - [ ] Complete the help
 
 See the [open issues](https://github.com/MH-Tobi/CLI_Calculator/issues) for a full list of proposed features (and known issues).
